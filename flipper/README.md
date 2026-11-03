@@ -15,7 +15,15 @@ The `scripts/build_flipper.sh` and `scripts/test_host.sh` wrappers run the same 
 
 ## Make and install a payload
 
+A prebuilt `dist/civswitch.fmacro` is already included, so you can skip this section unless you want
+to regenerate it. The `PicoSwitch/` directory is **not** part of this port repo — it lives in the
+upstream CivSwitch project. Get it from
+[github.com/Gezine/CivSwitch](https://github.com/Gezine/CivSwitch) (the `PicoSwitch/` folder,
+specifically `PicoSwitch/compress.js` and `PicoSwitch/tools/payload_to_macro.py`) and place that
+`PicoSwitch/` tree at the root of this repo before running the commands below:
+
 ```bash
+# PicoSwitch/ comes from https://github.com/Gezine/CivSwitch (copied to the repo root)
 cd PicoSwitch
 npm install
 node compress.js
