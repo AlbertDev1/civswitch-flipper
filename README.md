@@ -214,7 +214,7 @@ types the payload.
 
 See [`docs/TROUBLESHOOTING.md`](docs/TROUBLESHOOTING.md) for a frozen‑Flipper recovery
 (hold **LEFT + BACK** for 5 s; hard reboot with **BACK** for 30 s), API‑mismatch and macro‑file
-errors, Linux host verification, and the Nintendo Switch validation procedure.
+errors, and Linux host verification.
 
 ---
 
