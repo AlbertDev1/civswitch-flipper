@@ -10,6 +10,8 @@ This repository is a port and companion tooling. The exploit itself, its payload
 compression/transport pipeline are the work of the original CivSwitch author — see
 [Credits & attribution](#credits--attribution).
 
+📹 **Demo video:** [CivSwitch on Flipper Zero (r/switch2hacks)](https://www.reddit.com/r/switch2hacks/comments/1xmimlp/comment/19s3agkg0ordv/)
+
 > ⚠️ **Legal / safety notice — use entirely at your own risk.**
 >
 > - **The bundled payload is upstream CivSwitch's work, not ours.** This repository ships a prebuilt
