@@ -45,6 +45,7 @@ def records(lines, line_count):
             if key == previous:
                 yield KEY_RELEASE, 0, 0, PICO.KEY_GAP_MS
             yield TYPE_ASCII, 0, ord(char), PICO.KEY_HOLD_MS
+            yield WAIT, 0, 0, PICO.KEY_GAP_MS
             previous = key
         yield KEY_PRESS, 0, KEY_NUM["HID_KEY_ENTER"], PICO.ENTER_HOLD_MS
         yield KEY_RELEASE, 0, 0, PICO.ENTER_GAP_MS

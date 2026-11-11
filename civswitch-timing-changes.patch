@@ -1,0 +1,32 @@
+# Patch: CivSwitch Flipper - Timing changes for reliable Switch input
+# 
+# Change:
+# PicoSwitch/tools/payload_to_macro.py (from upstream Gezine/CivSwitch):
+#    - KEY_HOLD_MS: 40ms -> 32ms (required by macro_engine.c validation)
+#    - KEY_GAP_MS: 40ms -> 118ms (explicit delay after each character, ~150ms total)
+#    - ENTER_GAP_MS: 200ms -> 1000ms (wait after Enter key)
+#    - POST_A_WAIT_MS: 1200ms -> 1000ms (wait after A press to reopen keyboard)
+
+diff --git a/PicoSwitch/tools/payload_to_macro.py b/PicoSwitch/tools/payload_to_macro.py
+index e793ab8..newfile 100755
+--- a/PicoSwitch/tools/payload_to_macro.py
++++ b/PicoSwitch/tools/payload_to_macro.py
+@@ -21,14 +21,14 @@
+ 
+ # --- timings (hardware-tested values; do not lower without a timing test) ---
+-KEY_HOLD_MS = 40
+-KEY_GAP_MS = 40
++KEY_HOLD_MS = 32
++KEY_GAP_MS = 118
+ # Experimental: pack up to 6 keys per report (~6x faster, but the host may
+ # type them out of order - see module docstring). Keep False for reliable output.
+ USE_6KRO = False
+ ENTER_HOLD_MS = 40
+-ENTER_GAP_MS = 200
++ENTER_GAP_MS = 1000
+ PRE_A_WAIT_MS = 800    # wait right before the A press between batches
+-POST_A_WAIT_MS = 1200   # wait after the batch-start and separator A presses
++POST_A_WAIT_MS = 1000   # wait after the batch-start and separator A presses
+ A_PRESS_MS = 50
+ PREAMBLE_A_COUNT = 5
+ PREAMBLE_GAP_MS = 800  # wait after each preamble A press
